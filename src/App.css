@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+body {
+  background-color: #dcdcdc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todolist {
+  width: 600px;
+  height: 500px;
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.todolist h1 {
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  text-align: center;
+  line-height: 60px;
+  background-color: orange;
+  color: #fff;
+}
+
+.input-area {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-input {
+  padding: 25px;
+  border: none;
+  flex: 1;
+}
+
+.input-btn {
+  padding: 25px;
+  background-color: #696969;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.content {
+  width: 100%;
+  overflow-y: auto;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+  opacity: 0; /* 숨김 처리 */
+  width: 0;
+  height: 0;
+}
+
+.checkbox-container .checkmark {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark {
+  background-color: orange; /* 체크박스가 체크된 상태일 때 배경색 */
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark::after {
+  display: block;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.item button {
+  background-color: red;
   color: white;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item button:hover {
+  background-color: darkred;
 }
