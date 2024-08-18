@@ -53,10 +53,7 @@ function App() {
                 <span className="checkmark"></span>
               </label>
               <span>{todo}</span>
-              <button
-                className="delete-btn"
-                onDelete={() => deleteClick(index)}
-              >
+              <button className="delete-btn" onClick={() => deleteClick(index)}>
                 삭제
               </button>
             </li>
